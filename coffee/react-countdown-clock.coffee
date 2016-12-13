@@ -150,9 +150,10 @@ module.exports = React.createClass
     percent = @_fraction * @_seconds + 1.5
     formattedTime = @_formattedTime()
     @_context.globalAlpha = @props.alpha
-    @_context.fillStyle = @props.color
+    @_context.fillStyle = "#000"
     @_context.font = "bold #{@_fontSize(formattedTime)} #{@props.font}"
     @_context.fillText formattedTime, @_radius, @_radius
+    @_context.fillStyle = @props.color
     @_context.beginPath()
     @_context.arc @_radius, @_radius,      @_radius,     Math.PI * 1.5, Math.PI * percent, false
     @_context.arc @_radius, @_radius, @_innerRadius, Math.PI * percent,     Math.PI * 1.5, true
